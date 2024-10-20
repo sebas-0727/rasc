@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Reporte</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body {
+            background-color: #f0f8ff; /* Color de fondo más claro */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #ffffff; /* Fondo blanco para el formulario */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            padding: 20px; /* Espaciado interno */
+            max-width: 600px; /* Ancho máximo */
+            margin: auto; /* Centrar el contenedor */
+        }
+
+        h1 {
+            color: #007bff; /* Color del encabezado */
+            text-align: center; /* Centrar texto */
+            margin-bottom: 20px; /* Espaciado inferior */
+        }
+
+        .form-group label {
+            font-weight: bold; /* Negrita para las etiquetas */
+            color: #333; /* Color de las etiquetas */
+        }
+
+        .btn-success {
+            background-color: #28a745; /* Color de fondo del botón de éxito */
+            border: none; /* Sin borde */
+        }
+
+        .btn-danger {
+            background-color: #dc3545; /* Color de fondo del botón de peligro */
+            border: none; /* Sin borde */
+        }
+
+        .btn-success:hover, .btn-danger:hover {
+            opacity: 0.8; /* Efecto hover */
+        }
+
+        #imagenPreview {
+            max-width: 100%; /* Ajusta el tamaño de la imagen para ser responsiva */
+            height: auto; /* Mantiene la relación de aspecto */
+            margin-top: 10px; /* Espaciado entre el botón y la imagen */
+            border: 1px solid #ccc; /* Borde opcional */
+            border-radius: 5px; /* Bordes redondeados */
+            display: none; /* Oculto inicialmente */
+            animation: fadeIn 0.5s; /* Animación de entrada */
+        }
+
+        #labelImagen {
+            font-weight: bold; /* Estilo en negrita */
+            color: #333; /* Cambia el color del texto */
+            margin-right: 10px; /* Espaciado a la derecha */
+            text-align: right; /* Alinea el texto a la derecha */
+        }
+
+        .especie-img {
+            cursor: pointer;
+            border: 3px solid transparent;
+            max-width: 100%;
+            height: auto;
+            transition: border-color 0.3s; /* Transición suave al cambiar el borde */
+        }
+
+        .especie-img.selected {
+            border: 3px solid #000000; /* Recuadro negro al seleccionar la imagen */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Registrar Reporte</h1>
+        <form id="formularioReporte" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="zona">Zona:</label>
+                <select id="zona" name="zona" class="form-control select2" required>
+                    <option value="">Seleccione una zona</option>
+                    <option value="zona_1">Zona 1</option>
+                    <option value="zona_2">Zona 2</option>
+                    <option value="zona_3">Zona 3</option>
+                    <option value="zona_4">Zona 4</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="hora" class="form-control" required>
+            </div>
+
+            <!-- Acordeón de Especies -->
+            <div id="acordeonEspecies" class="accordion mt-4">
+                <!-- Las especies se insertarán aquí dinámicamente -->
+            </div>
+
+            <!-- Campo oculto para almacenar el ID de la especie seleccionada -->
+            <input type="hidden" id="especieSeleccionada" name="especie_id"> <br>
+            
+            <div class="form-group">
+                <select id="ataco" name="ataco" class="form-control" required>
+                    <option value="">¿Atacó?</option>
+                    <option value="no">No</option>
+                    <option value="si">Sí</option>
+                </select>
+            </div>
+
+            <div class="form-group d-flex align-items-center">
+                <input type="file" id="imagen" name="imagen" class="form-control-file mr-3">
+                <label for="imagen" class="mr-3" id="labelImagen">Imagen del reporte:</label>
+            </div>
+            <img id="imagenPreview" src="#" alt="Vista previa de la imagen" />
+            
+            <div class="form-group">
+                <label for="observaciones">Observaciones:</label>
+                <textarea id="observaciones" name="observaciones" class="form-control" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success">Registrar Reporte</button>
+            <a href="/" class="btn btn-danger">Salir</a>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/static/js/reporte.js"></script>
+</body>
+</html>

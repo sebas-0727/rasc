@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Reptiles</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body {
+            background-color: #f0f8ff; /* Color de fondo suave */
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px; /* Limitar el ancho máximo del contenedor */
+            margin-top: 30px; /* Separación superior */
+        }
+
+        h1, h2 {
+            color: #333; /* Color de los encabezados */
+        }
+
+        .form-control-file {
+            margin-bottom: 10px; /* Espaciado inferior para el campo de archivo */
+        }
+
+        .table th, .table td {
+            vertical-align: middle; /* Centrar verticalmente el contenido de la tabla */
+        }
+
+        img {
+            max-width: 100px; /* Tamaño máximo para las imágenes */
+            height: auto; /* Mantener proporción */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Registrar y Consultar Reptiles o Anfibios</h1>
+        
+        <!-- Formulario para registrar un reptil -->
+        <form id="reptilForm">
+            <div class="form-group">
+                <label for="nombre_cientifico">Nombre Científico</label>
+                <input type="text" class="form-control" id="nombre_cientifico" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="veneno">Venenosa o no venenosa</label>
+                <input type="text" class="form-control" id="veneno" required>
+            </div>
+            <div class="form-group">
+                <label for="imagen">Imagen</label>
+                <input type="file" class="form-control-file" id="imagen" accept="image/*" onchange="previewImage()">
+                <img id="imagenPreview" src="" alt="Vista previa" style="display: none; margin-top: 10px;">
+            </div>
+            <button type="submit" class="btn btn-success">Registrar</button>
+        </form>
+
+        <div id="alertContainer" class="mt-3"></div> <!-- Contenedor para alertas -->
+
+        <!-- Formulario para consultar un reptil específico -->
+        <h2 class="mt-5">Consultar Reptiles o Anfibios</h2>
+        <form id="consultaForm">
+            <div class="form-group">
+                <label for="consulta_nombre_cientifico">Nombre Científico</label>
+                <input type="text" class="form-control" id="consulta_nombre_cientifico" required>
+            </div>
+            <button type="submit" class="btn btn-secondary">Consultar</button>
+            <a href="/inicio_siga" class="btn btn-danger">Regresar</a>
+        </form>
+        <div id="reptilDetalle" class="mt-3"></div>
+
+        <!-- Tabla para mostrar reptiles -->
+        <h2 class="mt-5">Lista de Reptiles o Anfibios</h2>
+        <table class="table table-striped" id="reptilesTable">
+            <thead>
+                <tr>
+                    <th>Nombre Científico</th>
+                    <th>Nombre</th>
+                    <th>Venenoso</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las filas se llenarán con JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/static/js/reptiles.js"></script>
+
+    <script>
+        function previewImage() {
+            const file = document.getElementById('imagen').files[0];
+            const preview = document.getElementById('imagenPreview');
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block'; // Mostrar la vista previa
+                }
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = '';
+                preview.style.display = 'none'; // Ocultar la vista previa
+            }
+        }
+    </script>
+</body>
+</html>

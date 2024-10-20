@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta General</title>
+    <!-- Bootstrap CSS para estilos -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body {
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column; /* Asegura que el contenido se apile verticalmente */
+            align-items: center; /* Centra horizontalmente el contenido */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 30px;
+            width: 100%; /* Permite que el contenedor ocupe todo el ancho disponible */
+            max-width: 1200px; /* Ajusta el ancho máximo para pantallas grandes */
+            padding: 2rem; /* Agrega espacio interno */
+            background-color: #ffffff; /* Fondo blanco */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        h1, h2 {
+            text-align: center; /* Centra el texto */
+            color: #333333; /* Color del texto */
+        }
+
+        table {
+            width: 100%; /* Asegura que la tabla ocupe todo el ancho del contenedor */
+            border-collapse: collapse; /* Elimina el espacio entre celdas */
+            margin-top: 20px; /* Espacio superior para la tabla */
+        }
+
+        table img {
+            width: 100px; /* Tamaño fijo para las imágenes */
+            height: auto; /* Mantiene la relación de aspecto */
+        }
+
+        .btn {
+            width: 100%; /* Botones ocupan todo el ancho */
+            padding: 10px; /* Espacio interno */
+            margin-top: 10px; /* Espacio entre botones */
+        }
+
+        /* Media queries para mejorar la responsividad */
+        @media (max-width: 768px) {
+            table img {
+                width: 80px; /* Reduce el tamaño de las imágenes en pantallas más pequeñas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem; /* Reduce el padding lateral en pantallas muy pequeñas */
+            }
+
+            table img {
+                width: 60px; /* Aumenta la reducción de tamaño de las imágenes en pantallas muy pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Consulta General</h1>
+
+        <h2>Registros SIGA</h2>
+        <div id="resultadosSIGA">
+            <p class="text-muted">Cargando registros SIGA...</p>
+        </div>
+
+        <h2>Registrar Personal SIGA</h2>
+        <a class="btn btn-success" href="/siga">Registro Personal SIGA</a>
+
+        <h2>Volver al Inicio</h2>
+        <a href="/inicio_siga" class="btn btn-danger">Regresar</a>
+
+        <h2 class="mt-4">Avistadores</h2>
+        <div id="resultadosAvistadores">
+            <p class="text-muted">Cargando avistadores...</p>
+        </div>
+
+        <h2 class="mt-4">Reportes Generales</h2>
+        <div id="resultadosReportes">
+            <p class="text-muted">Cargando reportes...</p>
+        </div>
+    </div>
+
+    <!-- jQuery y Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/static/js/admin.js"></script>
+</body>
+</html>

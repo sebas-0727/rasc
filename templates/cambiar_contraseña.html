@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Contraseña</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body {
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column; /* Asegura que el contenido se apile verticalmente */
+            align-items: center; /* Centra horizontalmente el contenido */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 30px;
+            width: 100%; /* Permite que el contenedor ocupe todo el ancho disponible */
+            max-width: 600px; /* Ajusta el ancho máximo para pantallas grandes */
+            padding: 2rem; /* Agrega espacio interno */
+            background-color: #ffffff; /* Fondo blanco */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        h1 {
+            text-align: center; /* Centra el texto */
+            color: #333333; /* Color del texto */
+            margin-bottom: 20px; /* Espacio inferior */
+        }
+
+        .form-group {
+            margin-bottom: 15px; /* Espacio entre grupos de formulario */
+        }
+
+        .btn {
+            width: 100%; /* Botón ocupa todo el ancho */
+            padding: 10px; /* Espacio interno */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Cambiar Contraseña</h1>
+        <form id="cambiarContraseñaForm">
+            <div class="form-group">
+                <label for="correoActualizar">Correo:</label>
+                <input type="email" id="correoActualizar" class="form-control" name="correoActualizar" required>
+            </div>
+            <div class="form-group">
+                <label for="nuevaContraseña">Nueva Contraseña:</label>
+                <input type="password" id="nuevaContraseña" class="form-control" name="nuevaContraseña" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar Contraseña</button>
+        </form>
+        <div id="resultado" class="mt-3"></div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/static/js/cambia_contraseña.js"></script>
+</body>
+</html>

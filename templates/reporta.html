@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Reportes de Especies</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="static\js/img/snake-with-pin-map-location-logo-symbol-icon-design-illustration-vector-removebg-preview.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@200;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="static\js/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="static\js/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="static\js/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="static\js/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Cargando...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light p-0">
+                <div class="logo-and-title">
+                    <img class="img-fluid animated pulse infinite" style="height: 60px; width: 60px;" src="static\js/img/snake-with-pin-map-location-logo-symbol-icon-design-illustration-vector-removebg-preview.png">
+                    <h1>R.A.S.C</h1>
+                </div>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="/" class="nav-item nav-link active">Inicio</a>
+                        <a href="/contact" class="nav-item nav-link">Contacto</a>
+                        <!-- a href="/" class="nav-item nav-link">Reporte</a -->
+                        <a href="/mapa" class="nav-item nav-link">Mapa</a>
+                        <div class="nav-item dropdown">
+                            <a href="/" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Especies Comunes</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="/reptil" class="dropdown-item">Reptiles</a>
+                                <a href="/anfibio" class="dropdown-item">Anfibios</a>
+                                <!--<a href="testimonial.html" class="dropdown-item">#</a>
+                                <a href="blog.html" class="dropdown-item">#</a>
+                                <a href="404.html" class="dropdown-item">#</a>-->
+                            </div>
+                        </div>
+                        <!--<a href="contact.html" class="nav-item nav-link">Contacto Con el Siga</a>-->
+                    </div>
+                    <a href="/diagrama" class="btn btn-dark nav-item nav-link">Frecuencia de Avistamiento </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Hero Start -->
+    <div class="container-fluid bg-primary hero-header mb-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h3 class="fw-light text-white animated slideInRight">R.A.S.C</h3>
+                    <h1 class="display-4 text-white animated slideInRight">REPTILES Y <span class="fw-light text-dark">ANFIBIOS</span> DEL SENA-CBC</h1>
+                    <p class="text-white mb-4 animated slideInRight">nuestra funcion es garantizar la seguridad y convivencia en el CBC, proporcionando información vital sobre anfibios y reptiles.</p>
+                    <a href="/reporta" class="btn btn-dark py-2 px-4 me-3 animated slideInRight">REPORTAR</a>
+                    <a href="/contact" class="btn btn-outline-dark py-2 px-4 animated slideInRight">CONTACTO</a>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-fluid animated pulse infinite" src="static\js/img/serpiente_nueva_especie_-removebg-preview.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="text-primary mb-5"><span class="fw-light text-dark">Reportar es</span> Vivir</h1></div>
+            <div class="row g-5">
+                <div class="col-lg-7 wow fadeIn" data-wow-delay="0.1s">
+                    <p class="mb-4">Es importante reportar cualquier avistamiento o picadura de una serpiente para tomar las medidas necesarias y prevenir posibles accidentes. No dudes en comunicarte con las autoridades correspondientes o con un equipo de rescate especializado para recibir la ayuda necesaria. <a href="#">Tu seguridad y la de los demás es lo más importante! ¡Haz tu parte para mantener a salvo a la comunidad!</a>.</p>
+                    <div class="wow fadeIn" data-wow-delay="0.3s">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <!-- div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Nombre y Apellido">
+                                        <label for="name">Nombre y Apellido</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="name" placeholder="N° de Ficha">
+                                        <label for="email">Ficha</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                        <select class="form-control" id="subject" name="Zonas">
+                                            <option value="value1" selected>Ataque</option>
+                                            <option value="value2">Avistamientos</option>
+                                        </select>
+                                </div>
+                                <div class="col-12">
+                                    <select class="form-control" id="subject" name="Zonas">
+                                        <option value="value1" selected>Zonas 1</option>
+                                        <option value="value2">Zonas 2</option>
+                                        <option value="value3">zonas 3</option>
+                                    </select>
+                                    <br>
+                                    <div>
+                                        <label for="subject">Subir foto del Reptil o Amfibios</label>
+                                        <input class="btn btn-primary w-100 py-3" type="file" id="archivo" name="archivo">
+                                    </div>
+                                    <<div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                        <label for="message">Mensaje</label>
+                                    </div>-->
+                                </div>
+                                <h6>"Antes de realizar el reporte, asegúrate de tener toda la información necesaria: la hora, la zona de encuentro, una imagen, y si hubo un ataque o no. Recuerda tomar la foto antes de iniciar el reporte"</h6>
+                                <div class="col-12">
+                                    <a class="btn btn-dark nav-item nav-link" href="/avistador">Enviar Reporte</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5 wow fadeIn" data-wow-delay="0.5s">
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>Mapa de Serpientes</title>
+                        <meta charset="utf-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+                        <link rel="shortcut icon" href="static\js/img/logo-snake.png" type="image/x-icon">
+                        <style>
+                            #map-container {
+                                width: 100%;
+                                height: 500px; /* Altura fija del contenedor del mapa */
+                                position: relative;
+                            }
+                            #map {
+                                width: 100%;
+                                height: 100%;
+                            }
+                            .species-container {
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: space-around;
+                            }
+                            .species-info {
+                                flex: 0 0 45%; /* Cada elemento toma el 45% del ancho del contenedor */
+                                margin: 5px;
+                                text-align: center;
+                            }
+                            .species-info img {
+                                max-width: 100%;
+                                height: auto;
+                                border-radius: 50%;
+                            }
+                            .species-details {
+                                margin-top: 10px;
+                            }
+                            @media (max-width: 768px) {
+                                #map-container {
+                                    height: 300px; /* Altura menor para pantallas más pequeñas */
+                                }
+                                .species-info {
+                                    flex: 0 0 100%; /* Cada elemento toma el 100% del ancho del contenedor */
+                                }
+                            }
+                            @media (max-width: 480px) {
+                                #map-container {
+                                    height: 200px; /* Altura aún menor para pantallas muy pequeñas */
+                                }
+                                .species-info {
+                                    flex: 0 0 100%; /* Cada elemento toma el 100% del ancho del contenedor */
+                                }
+                            }
+                            #coordinates {
+                                position: fixed;
+                                bottom: 10px;
+                                left: 10px;
+                                background-color: rgba(255, 255, 255, 0.8);
+                                padding: 10px;
+                                border-radius: 5px;
+                                box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+                                font-family: Arial, sans-serif;
+                                font-size: 14px;
+                                line-height: 1.4;
+                                z-index: 1000;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div id="map-container">
+                            <div id="map"></div>
+                        </div>
+                        
+                        <!-- Aquí puedes agregar más contenido si lo deseas -->
+                        <div class="species-container">
+                            <!-- Contenido adicional, como la información de especies -->
+                        </div>
+                        
+                        <div id="coordinates"></div>
+                        
+                        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+                        <script>
+                            var map = L.map('map').setView([10.405472, -73.239257], 16); // Coordenadas iniciales del mapa
+                            
+                            L.tileLayer('https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+                                maxZoom: 20,
+                                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+                            }).addTo(map);
+                            
+                            // Definir las coordenadas de las zonas y sus colores
+                            var zones = [
+                                {
+                                    coords: [
+                                        [10.408090551655663, -73.24046290696822],
+                                        [10.407696092597028, -73.23963991275305],
+                                        [10.407293165146546, -73.23960577380745],
+                                        [10.407268914866734, -73.24046683387961]
+                                    ],
+                                    color: 'green',
+                                    name: 'Zona 1'
+                                },
+                                {
+                                    coords: [
+                                        [10.40720992544332, -73.24036613759348],
+                                        [10.407201177973436, -73.23934257030488],
+                                        [10.40545608093028, -73.23925137519838],
+                                        [10.40548439455424, -73.24033514671373]
+                                    ],
+                                    color: 'blue',
+                                    name: 'Zona 2'
+                                },
+                                {
+                                    coords: [
+                                        [10.40721403166544, -73.23933974115332],
+                                        [10.407271480503558, -73.2385098027602],
+                                        [10.405386801969891, -73.23592872328784],
+                                        [10.405453922260605, -73.23924701268541]
+                                    ],
+                                    color: 'red',
+                                    name: 'Zona 3'
+                                },
+                                {
+                                    coords: [
+                                        [10.405475866665755, -73.24032962322237],
+                                        [10.405387490370941, -73.23593080043794],
+                                        [10.402387456782154, -73.23709179431872],
+                                        [10.403090205793141, -73.24025597864595]
+                                    ],
+                                    color: 'red',
+                                    name: 'Zona 4'
+                                }
+                            ];
+                            
+                            // Crear las zonas en el mapa
+                            zones.forEach(function (zone) {
+                                L.polygon(zone.coords, {
+                                    color: zone.color,
+                                    fillColor: zone.color,
+                                    fillOpacity: 0.3
+                                }).addTo(map);
+                            });
+                            
+                            var speciesData = {
+                                "10.407613793469443,-73.24006918123251": [
+                                    {
+                                        name: "Cascabel",
+                                        image: "https://png.pngtree.com/png-vector/20231101/ourmid/pngtree-portrait-of-a-rattlesnake-animal-png-image_10387215.png",
+                                        details: "Color: Varía entre el marrón y el gris. <br>Venenosa: Si<br>"
+                                    },
+                                    {
+                                        name: "Falsa Mapaná",
+                                        image: "img/falsa-mapana.png",
+                                        details: "Color: Crema o amarillento-blanquecino. <br>Venenosa: Si<br>"
+                                    }
+                                ],
+                                "10.406463423082316,-73.23983184261428": [
+                                    {
+                                        name: "Falsa Mapaná",
+                                        image: "img/falsa-mapana.png",
+                                        details: "Color: Crema o amarillento-blanquecino. <br>Venenosa: Si<br>"
+                                    },
+                                    {
+                                        name: "Mapaná rabo seco",
+                                        image: "img/rabo_seco.png",
+                                        details: "Color: café tierra, con marcas cafés o manchas dorsales negras. <br>Venenosa: No<br>"
+                                    }
+                                ],
+                                "10.40536597588805,-73.23846391608488": [
+                                    {
+                                        name: "Cascabel",
+                                        image: "https://png.pngtree.com/png-vector/20231101/ourmid/pngtree-portrait-of-a-rattlesnake-animal-png-image_10387215.png",
+                                        details: "Color: Varía entre el marrón y el gris. <br>Venenosa: Si<br>"
+                                    },
+                                    {
+                                        name: "Boa",
+                                        image: "https://png.pngtree.com/png-vector/20231123/ourmid/pngtree-boa-constrictor-wildlife-studio-png-image_10658955.png",
+                                        details: "Color: Café bronceado a gris. <br>Venenosa: No<br>"
+                                    },
+                                    {
+                                        name: "Mapaná rabo seco",
+                                        image: "img/rabo_seco.png",
+                                        details: "Color: café tierra, con marcas cafés o manchas dorsales negras. <br>Venenosa: No<br>"
+                                    }
+                                ]
+                            };
+                            
+                            // Definir coordenadas específicas y agregar marcadores
+                            var markersData = [
+                                { coords: [10.407613793469443, -73.24006918123251], iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png', name: 'Zona 1 (MENOR AVISTAMIENTO)' },
+                                { coords: [10.406463423082316, -73.23983184261428], iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png', name: 'Zona 2 (MENOR ÍNDICE)' },
+                                { coords: [10.40536597588805, -73.23846391608488], iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png', name: 'Zona 3 (MAYOR AVISTAMIENTO)' }
+                            ];
+                            
+                            markersData.forEach(function (markerData) {
+                                var marker = L.marker(markerData.coords, {
+                                    icon: L.icon({
+                                        iconUrl: markerData.iconUrl,
+                                        iconSize: [25, 41],
+                                        iconAnchor: [12, 41],
+                                        popupAnchor: [1, -34]
+                                    })
+                                }).addTo(map);
+                            
+                                marker.bindTooltip(markerData.name, { permanent: false, direction: "top" });
+                            
+                                marker.on('click', function (e) {
+                                    showSpecies(markerData.coords[0], markerData.coords[1]);
+                                });
+                            });
+                        </script>
+                    </body>
+                    </html>
+                </div>
+            </div>
+        </div>
+    </div>
+<hr>
+       <!-- CONTACTO -->
+       <div class="container-fluid bg-white footer">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="/" class="d-inline-block mb-3">
+                        <h1 class="text-primary">R.A.S.C</h1>
+                    </a>
+                    <p class="mb-0">Promover la cultura de mejora que permita incrementar el desempeño institucional del SENA.</p>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="mb-4">información</h5>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Valledupar-Cesar-Colombia</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+57 xxxxxxxxxx</p>
+                    <p><i class="fa fa-envelope me-3"></i>RAS.@gmail.com</p>
+                    <!--div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-primary me-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-primary me-1" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-outline-primary me-1" href=""><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div-->
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="mb-4">paginas informativas extras</h5>
+                    <a class="btn btn-link" href="https://www.ins.gov.co/Comunicaciones/Infografias/PROGRAMA%20NACIONAL%20SERPIENTES.pdf">PROGRAMA NACIONAL SERPIENTES</a>
+                    <a class="btn btn-link" href="https://www.mayoclinic.org/es/departments-centers/international?customer_id=465-093-8658&mc_id=google&campaign=20463333343&geo=1029436&kw=clinic%20mayo&ad=679624138502&network=g&sitetarget=&adgroup=158147915731&extension=&target=kwd-305926373726&matchtype=b&device=c&account=4650938658&invsrc=spanish&placementsite=enterprise&gclid=EAIaIQobChMIupOszJ36hQMVc6xaBR2o6QTOEAAYASAAEgKb4_D_BwE">mayo clinic - clinica de cuidados ambientales</a>
+                    <a class="btn btn-link" href="https://www.asgardhospitalveterinari.es/">ASGARD hospital veterinario</a>
+                    <a class="btn btn-link" href="https://www.ucm.es/">Universidad Complutense de Madrid</a>
+
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="mb-4">apoyo</h5>
+                    <a class="btn btn-link" href="https://oferta.senasofiaplus.edu.co/sofia-oferta/">SENA</a>
+                    <a class="btn btn-link" href="https://gestionindustrialsena.blogspot.com/p/siga.html">siga</a>
+                    <a class="btn btn-link" href="https://www.gaiambiente.es/?gad_source=1&gclid=EAIaIQobChMIz6DjsaD6hQMV5alaBR3YUwUnEAAYAiAAEgLfa_D_BwE">gaia-ambiente</a>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="/">R.A.S.C</a>, protección personal y ambiental.
+
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        apoyado por el <a class="border-bottom" href="">SENA</a> creado por Jharold David Doria Mendoza <a href="">editado por Camilo Alejandro Zapata Montero</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="#">R.A.S.C</a>
+                            <!--a href="#">Cookies</a-->
+                            <a href="#">Ayuda</a>
+                            <!--a href="#">Creditos</a-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIN DE CONTACTO -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static\js/lib/wow/wow.min.js"></script>
+    <script src="static\js/lib/easing/easing.min.js"></script>
+    <script src="static\js/lib/waypoints/waypoints.min.js"></script>
+    <script src="static\js/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="static\js/frond-js/main.js"></script>
+</body>
+
+</html>

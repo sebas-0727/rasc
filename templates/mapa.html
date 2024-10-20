@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapa de Serpientes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="shortcut icon" href="static/js/img/snake-with-pin-map-location-logo-symbol-icon-design-illustration-vector-removebg-preview.png" type="image/x-icon">
+    <style>
+        body, html, #map {
+            height: 100%;
+            margin: 0;
+        }
+        .species-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .species-info {
+            flex: 0 0 45%;
+            margin: 5px;
+            text-align: center;
+        }
+        .species-info img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+        .species-details {
+            margin-top: 10px;
+        }
+        .legend {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            z-index: 1000;
+        }
+        .legend-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .legend-item span {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        .green {
+            background-color: green;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .red {
+            background-color: red;
+        }
+        .report-count {
+            margin-top: 20px;
+        }
+        .report-item {
+            margin-bottom: 10px;
+        }
+        #coordinates {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.4;
+            z-index: 1000;
+        }
+        #back-to-index {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.3s;
+            z-index: 1000;
+        }
+        #back-to-index:hover {
+            background-color: #1C2900;
+        }
+        #back-to-index:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="map"></div>
+    <!-- Leyenda de colores -->
+    <div class="legend">
+        <div class="legend-title">Referencias de Color</div>
+        <div class="legend-item"><span class="green"></span>Menor avistamiento</div>
+        <div class="legend-item"><span class="blue"></span>Avistamiento moderado</div>
+        <div class="legend-item"><span class="red"></span>Mayor avistamiento</div>
+        <div class="report-count">
+            <div class="legend-title">Conteo de Reportes por Zona</div>
+            <div id="report-count-container">
+                <!-- Aquí se mostrarán los reportes por zona -->
+            </div>
+        </div>
+    </div>
+    <div id="coordinates"></div>
+    <button id="back-to-index" onclick="window.location.href='/';">Volver al inicio</button>
+    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([10.407743036098857, -73.24042861713178], 18); // Coordenadas iniciales del mapa
+    
+        L.tileLayer('https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+        }).addTo(map);
+    
+        var zones = [
+            {
+                coords: [
+                    [10.408090551655663, -73.24046290696822],
+                    [10.407596, -73.239343],
+                    [10.407204, -73.239343],
+                    [10.407210, -73.240367]
+                ],
+                color: 'green',
+                name: 'Zona 1'
+            },
+            {
+                coords: [
+                    [10.407597, -73.239341],
+                    [10.407261, -73.238672],
+                    [10.407218, -73.239341],
+                    [10.407218, -73.239341]
+                ],
+                color: 'green',
+                name: 'Zona 1'
+            },
+            {
+                coords: [
+                    [10.40720992544332, -73.24036613759348],
+                    [10.407201177973436, -73.23934257030488],
+                    [10.40545608093028, -73.23925137519838],
+                    [10.40548439455424, -73.24033514671373]
+                ],
+                color: 'blue',
+                name: 'Zona 2'
+            },
+            {
+                coords: [
+                    [10.40721403166544, -73.23933974115332],
+                    [10.407271480503558, -73.2385098027602],
+                    [10.405386801969891, -73.23592872328784],
+                    [10.405453922260605, -73.23924701268541]
+                ],
+                color: 'red',
+                name: 'Zona 3'
+            },
+            {
+                coords: [
+                    [10.405475866665755, -73.24032962322237],
+                    [10.405387490370941, -73.23593080043794],
+                    [10.402387456782154, -73.23709179431872],
+                    [10.403090205793141, -73.24025597864595]
+                ],
+                color: 'red',
+                name: 'Zona 4'
+            },
+        ];
+    
+        zones.forEach(function (zone) {
+            L.polygon(zone.coords, {
+                color: zone.color,
+                fillColor: zone.color,
+                fillOpacity: 0.3
+            }).addTo(map);
+        });
+    
+        var speciesData = {
+            "10.407613793469443,-73.24006918123251": [
+                {
+                    name: "Cascabel",
+                    image: "https://png.pngtree.com/png-vector/20231101/ourmid/pngtree-portrait-of-a-rattlesnake-animal-png-image_10387215.png",
+                    details: "Color: Varía entre el marrón y el gris. <br>Venenosa: Si<br>"
+                },
+                {
+                    name: "Falsa Mapaná",
+                    image: "https://www.researchgate.net/publication/291043411/figure/fig17/AS:802311601405967@1568297400407/Figura-4-17-Falsa-Mapana-Xenodon-rhabdocephalus-Foto-de-Terry-Hibbitts.png",
+                    details: "Color: Crema o amarillento-blanquecino. <br>Venenosa: Si<br>"
+                },
+            ],
+            
+            "10.406463423082316,-73.23983184261428": [
+                {
+                    name: "Falsa Mapaná",
+                    image: "https://www.researchgate.net/publication/291043411/figure/fig17/AS:802311601405967@1568297400407/Figura-4-17-Falsa-Mapana-Xenodon-rhabdocephalus-Foto-de-Terry-Hibbitts.png",
+                    details: "Color: Crema o amarillento-blanquecino. <br>Venenosa: Si<br>"
+                },
+                {
+                    name: "Mapaná rabo seco",
+                    image: "https://www.zoobioparqueamaru.com/nos-animaux/reptiles/110-zoo-cuenca.jpg",
+                    details: "Color: café tierra, con marcas cafés o manchas dorsales negras. <br>Venenosa: No<br>"
+                }
+            ],
+    
+            "10.40536597588805,-73.23846391608488": [
+                {
+                    name: "Cascabel",
+                    image: "https://png.pngtree.com/png-vector/20231101/ourmid/pngtree-portrait-of-a-rattlesnake-animal-png-image_10387215.png",
+                    details: "Color: Varía entre el marrón y el gris. <br>Venenosa: Si<br>"
+                },
+                {
+                    name: "Boa",
+                    image: "https://png.pngtree.com/png-vector/20231123/ourmid/pngtree-boa-constrictor-wildlife-studio-png-image_10658955.png",
+                    details: "Color: Café bronceado a gris. <br>Venenosa: No<br>"
+                },
+                {
+                    name: "Mapaná rabo seco",
+                    image: "https://www.zoobioparqueamaru.com/nos-animaux/reptiles/110-zoo-cuenca.jpg",
+                    details: "Color: café tierra, con marcas cafés o manchas dorsales negras. <br>Venenosa: No<br>"
+                }
+            ]
+        };
+
+        // Definir coordenadas específicas y agregar marcadores
+        var markersData = [
+            { coords: [10.407613793469443, -73.24006918123251], iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png', name: 'Zona 1 (MENOR AVISTAMIENTO)' },
+            { coords: [10.406463423082316, -73.23983184261428], iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png', name: 'Zona 2 (MENOR ÍNDICE)' },
+            { coords: [10.40536597588805, -73.23846391608488], iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png', name: 'Zona 3 (MAYOR AVISTAMIENTO)' }// Marcador
+            // Agrega más marcadores con sus respectivas coordenadas y URL de ícono si es necesario
+        ];
+    
+        markersData.forEach(function (markerData) {
+            var marker = L.marker(markerData.coords, {
+                icon: L.icon({
+                    iconUrl: markerData.iconUrl,
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34]
+                })
+            }).addTo(map);
+            
+            marker.bindTooltip(markerData.name, { permanent: false, direction: "top" });
+            
+            marker.on('click', function (e) {
+                showSpecies(markerData.coords[0], markerData.coords[1]);
+            });
+        });
+    
+        function showSpecies(latitude, longitude) {
+            var key = latitude + "," + longitude;
+            var species = speciesData[key];
+            if (species) {
+                var popupContent = '<div class="species-container">';
+                species.forEach(function (specie) {
+                    popupContent += '<div class="species-info">';
+                    popupContent += '<h4>' + specie.name + '</h4>';
+                    popupContent += '<img src="' + specie.image + '" alt="' + specie.name + '">';
+                    popupContent += '<div class="species-details">' + specie.details + '</div>';
+                    popupContent += '</div>';
+                });
+                popupContent += '</div>';
+                var speciesContainer = document.createElement('div');
+                speciesContainer.innerHTML = popupContent;
+                var popup = L.popup()
+                    .setLatLng([latitude, longitude])
+                    .setContent(speciesContainer)
+                    .openOn(map);
+            } else {
+                alert("No se encontraron especies en esta ubicación.");
+            }
+        }
+
+        var bounds = L.latLngBounds(
+            [10.405, -73.241], // Esquina suroeste
+            [10.408, -73.238]  // Esquina noreste
+        );
+
+        map.setMaxBounds(bounds);
+
+        map.on('mousemove', function (e) {
+            document.getElementById('coordinates').innerHTML = "Latitud: " + e.latlng.lat.toFixed(6) + "<br>Longitud: " + e.latlng.lng.toFixed(6);
+        });
+
+        map.on('mousemove', function (e) {
+            document.getElementById('coordinates').innerHTML = "Latitud: " + e.latlng.lat.toFixed(6) + "<br>Longitud: " + e.latlng.lng.toFixed(6);
+        });
+
+
+          // Función para cargar el conteo de reportes desde la base de datos
+function loadReportCounts() {
+    fetch('/contador')  // Cambia esta URL para que apunte a la ruta del backend
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(reportCounts => {
+        var reportCountContainer = document.getElementById('report-count-container');
+        reportCountContainer.innerHTML = '';  // Limpiar el contenedor antes de agregar los reportes
+
+        // Agregar reportes dinámicamente al contenedor
+        reportCounts.forEach(report => {
+            var reportItem = document.createElement('div');
+            reportItem.classList.add('report-item');
+            reportItem.textContent = report.zona + ': ' + report.cantidad_reportes + ' reportes';
+            reportCountContainer.appendChild(reportItem);
+        });
+    })
+    .catch(error => console.error('Error al cargar los datos:', error));
+}
+
+// Llama a la función para cargar los reportes inicialmente
+loadReportCounts();  
+
+// Configura la actualización cada 5 segundos
+setInterval(loadReportCounts, 5000);
+
+    </script>
+    
+    </body>
+    </html>

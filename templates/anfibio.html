@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Anfibios</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="static/js/img/rana-1_66a9a5c8_221212161515_1280x720-removebg-preview.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@200;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="static\js/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="static\js/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="static\js/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="static\js/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Cargando...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light p-0">
+                <div class="logo-and-title">
+                    <img class="img-fluid animated pulse infinite" style="height: 60px; width: 60px;" src="static\js/img/snake-with-pin-map-location-logo-symbol-icon-design-illustration-vector-removebg-preview.png">
+                    <h1>R.A.S.C</h1>
+                </div>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="/" class="nav-item nav-link active">Inicio</a>
+                        <a href="/contact" class="nav-item nav-link">Contacto</a>
+                        <a href="/reporta" class="nav-item nav-link">Reporte</a>
+                        <div class="nav-item dropdown">
+                            <a href="/" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Especies Comunes</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="/reptil" class="dropdown-item">Reptiles</a>
+                                <a href="/anfibio" class="dropdown-item">Anfibios</a>
+                                <!--<a href="testimonial.html" class="dropdown-item">#</a>
+                                <a href="blog.html" class="dropdown-item">#</a>
+                                <a href="404.html" class="dropdown-item">#</a>-->
+                            </div>
+                        </div>
+                        <!--<a href="contact.html" class="nav-item nav-link">Contacto Con el Siga</a>-->
+                    </div>
+                    <a href="/diagrama" class="btn btn-dark nav-item nav-link">Frecuencia de Avistamiento </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Hero Start -->
+    <div class="container-fluid bg-primary hero-header mb-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h3 class="fw-light text-white animated slideInRight">R.A.S.C</h3>
+                    <h1 class="display-4 text-white animated slideInRight">REPTILES Y <span class="fw-light text-dark">ANFIBIOS</span> DEL SENA-CBC</h1>
+                    <p class="text-white mb-4 animated slideInRight">nuestra funcion es garantizar la seguridad y convivencia en el CBC, proporcionando información vital sobre anfibios y reptiles.</p>
+                    <a href="/reptil" class="btn btn-dark py-2 px-4 me-3 animated slideInRight">REPTILES</a>
+                    <a href="/anfibio" class="btn btn-outline-dark py-2 px-4 me-3 animated slideInRight">AMFIBIOS</a>
+                    <a href="/" class="btn btn-dark py-2 px-4 me-3 animated slideInRight">INICIO</a>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-fluid animated pulse infinite" src="static/js/img/rana-1_66a9a5c8_221212161515_1280x720-removebg-preview.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+        <!-- reporte de avistamiento -->
+        <div class="container-fluid py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="feature-item position-relative bg-primary text-center p-3">
+                            <div class="border py-5 px-3">
+                                <img src="static\js/img/icons8-error-100.png" alt="" srcset="" height="60px" width="60px"><br>
+                                <br>
+                                <a href="/reporta" class="text-white mb-0">Reportar avistamiento</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                        <div class="feature-item position-relative bg-primary text-center p-3">
+                            <div class="border py-5 px-3">
+                                <img src="static\js/img/icons8-rattlesnake-100.png" alt="" srcset="" height="60px" width="60px"><br>
+                                <br>
+                                <a href="/reptil" class="text-white mb-0">Especies</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                        <div class="feature-item position-relative bg-primary text-center p-3">
+                            <div class="border py-5 px-3">
+                                <img src="static\js/img/icons8-clock-100.png" alt="" srcset="" height="60px" width="60px"><br>
+                                <br>
+                                <a href="/diagrama" class="text-white mb-0">Frecuencia</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Finde -->
+
+         <!-- Product Start -->
+         <section class="collection">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="content swiper-slide">
+                        <img src="https://static.inaturalist.org/photos/33237/large.JPG" alt="">
+                        <div class="text-content">
+                            <h3>Ikakogi Tayrona </h3>
+                            <p><strong>VENENO:</strong> Medianamente venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Se encuentra en ambientes costeros y áreas cercanas a arrecifes de
+                                coral.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, pero puede defenderse si se siente
+                                amenazada.</p>
+    
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://static.inaturalist.org/photos/65233/large.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Centrolene Notosticta </h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en áreas montañosas y húmedas, principalmente en bosques
+                                nubosos.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, se esconde ante posibles amenazas.
+                            </p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Atelopus_certus_calling_male_edit1.jpg/220px-Atelopus_certus_calling_male_edit1.jpg"
+                            alt="">
+                        <div class="text-content">
+                            <h3>Atelopus Walkeri </h3>
+                            <p><strong>VENENO:</strong> Venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en ríos y áreas húmedas de bosques tropicales y
+                                subtropicales.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, aunque puede secretar toxinas como
+                                defensa si se siente
+                                amenazada.</p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://static.inaturalist.org/photos/106259/large.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Atelopus Carrikeri </h3>
+                            <p><strong>VENENO:</strong> Venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Se encuentra en ríos y arroyos de bosques tropicales,
+                                preferentemente en áreas húmedas.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, pero puede liberar toxinas si se
+                                siente amenazada.</p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://es.gizmodo.com/app/uploads/2019/12/hqkaieushihe1dwud3wd.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Atelopus Arsyecue </h3>
+                            <p><strong>VENENO:</strong> Venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en áreas húmedas cerca de ríos en bosques tropicales y
+                                montañosos.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, pero puede defenderse liberando
+                                toxinas si se siente
+                                amenazada.</p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://static.inaturalist.org/photos/646314/large.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Sapo Hojarasquero (nombre científico si está disponible)</h3>
+                            <p><strong>VENENO:</strong> Medianamente venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en áreas boscosas y húmedas, frecuentemente cerca de ríos y
+                                estanques.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, aunque puede liberar toxinas si se
+                                siente amenazada.</p>
+    
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/4881324/large.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Sapo Gigante (Phrynosoma vulgaris)</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en áreas húmedas, como bosques tropicales y subtropicales,
+                                así como en zonas
+                                cercanas a cuerpos de agua.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, pero puede secretar sustancias
+                                irritantes si se siente
+                                amenazada.</p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/38364487/large.jpeg" alt="">
+                        <div class="text-content">
+                            <h3>Sapo del Obispo (Bufo bufo)</h3>
+                            <p><strong>VENENO:</strong> Venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en bosques, campos y zonas cercanas a cuerpos de agua, con
+                                preferencia por ambientes
+                                húmedos.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, pero puede secretar toxinas a través
+                                de su piel si se siente
+                                amenazada.</p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://static.inaturalist.org/photos/81585/large.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Rhinella Humboldtí </h3>
+                            <p><strong>VENENO:</strong> Venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en áreas boscosas y húmedas, cerca de ríos y cuerpos de agua
+                                en ambientes
+                                tropicales.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, pero puede secretar toxinas si se
+                                siente amenazada.</p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://static.inaturalist.org/photos/6315553/large.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Rana Selvática Listada (Lithodytes lineatus)</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en selvas tropicales y áreas húmedas, frecuentemente cerca
+                                de ríos y arroyos.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, se esconde para evitar depredadores.
+                            </p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://static.inaturalist.org/photos/101094/large.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Leptodactylus Insularum </h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en áreas húmedas y boscosas, cerca de cuerpos de agua, como
+                                ríos y estanques.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, tiende a huir o esconderse ante
+                                amenazas.</p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/56957585/large.jpeg" alt="">
+                        <div class="text-content">
+                            <h3>Leptodactylus Colombiensis </h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en áreas húmedas, como bosques tropicales y zonas cercanas a
+                                cuerpos de agua.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, se oculta para evitar depredadores y
+                                puede saltar
+                                rápidamente si se siente amenazada.</p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/10207539/large.jpeg" alt="">
+                        <div class="text-content">
+                            <h3>Rana Picuda (Leptodactylus fuscus)</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en áreas húmedas, como pantanos, charcas y zonas cercanas a
+                                cuerpos de agua en
+                                bosques tropicales.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, pero puede saltar y esconderse
+                                rápidamente si se siente
+                                amenazada.</p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/23591413/original.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Rana de Bigotes (Leptodactylus fragilis)</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en ambientes húmedos, como bosques tropicales y zonas
+                                cercanas a cuerpos de agua,
+                                frecuentemente en áreas abiertas.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, se oculta para evitar depredadores y
+                                puede saltar
+                                rápidamente si se siente amenazada.</p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://static.inaturalist.org/photos/33388/large.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Rana de Labio Turbo Blanco (Leptodactylus poecilochilus)</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en áreas húmedas, como bosques tropicales y cercanías de
+                                cuerpos de agua, a menudo
+                                en zonas de vegetación densa.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, se esconde ante amenazas y puede
+                                saltar para escapar si es
+                                necesario.</p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/114698619/large.jpeg" alt="">
+                        <div class="text-content">
+                            <h3>Ranita Enana (Pseudopaludicola pusilla)</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en áreas húmedas, especialmente en pastizales y bordes de
+                                cuerpos de agua en
+                                regiones tropicales.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, se esconde en la vegetación y puede
+                                saltar rápidamente si se
+                                siente amenazada.</p>
+    
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://static.inaturalist.org/photos/7964789/large.jpeg" alt="">
+                        <div class="text-content">
+                            <h3>Sapito Lipón (Pleurodema brachyops)</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en áreas húmedas, como praderas y bordes de cuerpos de agua,
+                                en regiones tropicales
+                                y subtropicales.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, se oculta en la vegetación y puede
+                                esconderse rápidamente si
+                                se siente amenazada.</p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://1.bp.blogspot.com/-EG8dHqC-DaQ/WWI9YOJI3xI/AAAAAAAASo4/me0EFA244GEA0WPnTOag17Jm6AUL9vH-gCLcBGAs/s1600/IMG_4213.JPG"
+                            alt="">
+                        <div class="text-content">
+                            <h3>Pseudis Paradoxa </h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en cuerpos de agua dulce, como lagos y charcas, en regiones
+                                tropicales y
+                                subtropicales.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, se mueve con rapidez en el agua y
+                                puede ocultarse entre la
+                                vegetación acuática.</p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/4654051/large.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Rana Toro (Lithobates catesbeianus)</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en cuerpos de agua dulce, como estanques, lagos y ríos, en
+                                áreas húmedas y
+                                tropicales.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, pero puede mostrar agresividad si se
+                                siente amenazada,
+                                especialmente durante la temporada de reproducción.</p>
+    
+                        </div>
+                    </div>
+                    <div class="content swiper-slide">
+                        <img src="https://www.fotorevista.com.ar/SFotos/16/06/28/160628083542.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Sapo Cuaima (Ceratophrys calcarata)</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en zonas húmedas, como bosques tropicales y áreas cercanas a
+                                cuerpos de agua, donde
+                                se encuentra a menudo en el suelo o en la vegetación densa.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, pero puede ser agresiva si se siente
+                                amenazada, mostrando un
+                                comportamiento defensivo.</p>
+    
+                        </div>
+                    </div>
+    
+                    <div class="content swiper-slide">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Phyllomedusa_venusta01a.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Phyllomedusa Venusta</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en bosques tropicales y áreas cercanas a cuerpos de agua,
+                                frecuentemente en la
+                                vegetación arbórea.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, tiende a huir o esconderse en la
+                                vegetación si se siente
+                                amenazada.</p>
+    
+                        </div>
+                    </div>
+    
+                    <div class="content swiper-slide">
+                        <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/115769961/large.jpeg" alt="">
+                        <div class="text-content">
+                            <h3>Rana Arborícola Vermiculada (Trachycephalus vermiculatus)</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en bosques tropicales y áreas húmedas, frecuentemente en
+                                árboles y vegetación
+                                cercana a cuerpos de agua.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, se esconde en la vegetación y puede
+                                saltar rápidamente si se
+                                siente amenazada.</p>
+    
+                        </div>
+                    </div>
+    
+                    <div class="content swiper-slide">
+                        <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/114939806/original.jpeg" alt="">
+                        <div class="text-content">
+                            <h3>Rana Arborícola Ñata (Smilisca sila)</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en bosques tropicales y áreas cercanas a cuerpos de agua, a
+                                menudo se encuentra en
+                                árboles y arbustos.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, tiende a esconderse en la vegetación
+                                si se siente amenazada.
+                            </p>
+    
+                        </div>
+                    </div>
+    
+                    <div class="content swiper-slide">
+                        <img src="https://static.inaturalist.org/photos/185954949/large.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Hyloscirtus Callipeza (Hyloscirtus callipeza)</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en bosques montanos y áreas húmedas, frecuentemente cerca de
+                                arroyos y cuerpos de
+                                agua en regiones tropicales.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, se esconde en la vegetación y puede
+                                saltar para escapar si
+                                se siente amenazada.</p>
+    
+                        </div>
+                    </div>
+    
+                    <div class="content swiper-slide">
+                        <img src="https://static.inaturalist.org/photos/9467170/large.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Rana Platanera de Ojos Tornasol (Boana pugnax)</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en bosques tropicales y áreas húmedas, a menudo en árboles y
+                                cerca de cuerpos de
+                                agua.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, tiende a huir o esconderse en la
+                                vegetación si se siente
+                                amenazada.</p>
+    
+                        </div>
+                    </div>
+    
+                    <div class="content swiper-slide">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Scarthyla_vigilans_male.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Ranita Vigilante (Scarthyla vigilans)</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en bosques tropicales y áreas húmedas, frecuentemente en
+                                vegetación densa y cerca de
+                                cuerpos de agua.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, se oculta en la vegetación y puede
+                                saltar para escapar si se
+                                siente amenazada.</p>
+    
+                        </div>
+                    </div>
+    
+                    <div class="content swiper-slide">
+                        <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/190124462/original.jpg" alt="">
+                        <div class="text-content">
+                            <h3>Rana Platanera de Ojos Pálidos (Boana platanera)</h3>
+                            <p><strong>VENENO:</strong> No venenosa.</p>
+                            <p><strong>HÁBITOS:</strong> Habita en áreas húmedas, especialmente en bosques tropicales y
+                                cercanías de cuerpos de
+                                agua, donde suele encontrarse en árboles y arbustos.</p>
+                            <p><strong>PASIVA O OFENSIVA:</strong> Generalmente pasiva, prefiere huir o esconderse en lugar
+                                de confrontar amenazas.
+                            </p>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Product End -->
+
+    <!-- Newsletter Start -->
+
+    <div class="container-fluid newsletter bg-primary py-5 my-5">
+        <div class="container py-5">
+
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="text-white mb-3"><span class="fw-light text-dark">Recuerda Enviar tu</span> Reporte</h1>
+            <div class="col-12">
+                <a class="btn btn-dark nav-item nav-link" href="/reporta">Enviar Reporte</a>
+            </div>
+            </div>
+            <!-- <div class="row justify-content-center">
+                <div class="col-md-7 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input class="form-control w-100 py-4 ps-4 pe-5" type="text" placeholder="Enter Your Email"
+                            style="height: 48px;">
+                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                class="fa fa-paper-plane text-white fs-4"></i></button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Newsletter End -->
+
+    <!-- How To Use Start --
+    <div class="container-fluid how-to-use bg-primary my-5 py-5">
+        <div class="container text-white py-5">
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="text-white mb-3"><span class="fw-light text-dark">How To Use Our</span> Natural & Organic
+                    <span class="fw-light text-dark">Hair Shampoo</span></h1>
+                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet, erat non malesuada consequat, nibh erat tempus risus.</p>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 text-center wow fadeIn" data-wow-delay="0.1s">
+                    <div class="btn-square rounded-circle border mx-auto mb-4" style="width: 120px; height: 120px;">
+                        <i class="fa fa-home fa-3x text-dark"></i>
+                    </div>
+                    <h5 class="text-white">Wash Hair With Water</h5>
+                    <hr class="w-25 bg-light my-2 mx-auto">
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet, erat non malesuada consequat.</span>
+                </div>
+                <div class="col-lg-4 text-center wow fadeIn" data-wow-delay="0.3s">
+                    <div class="btn-square rounded-circle border mx-auto mb-4" style="width: 120px; height: 120px;">
+                        <i class="fa fa-home fa-3x text-dark"></i>
+                    </div>
+                    <h5 class="text-white">Apply Shampoo On Hair</h5>
+                    <hr class="w-25 bg-light my-2 mx-auto">
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet, erat non malesuada consequat.</span>
+                </div>
+                <div class="col-lg-4 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn-square rounded-circle border mx-auto mb-4" style="width: 120px; height: 120px;">
+                        <i class="fa fa-home fa-3x text-dark"></i>
+                    </div>
+                    <h5 class="text-white">Wait 5 Mins And Wash</h5>
+                    <hr class="w-25 bg-light my-2 mx-auto">
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet, erat non malesuada consequat.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    !-- How To Use End -->
+
+
+    <!-- CONTACTO -->
+    <div class="container-fluid bg-white footer">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="/" class="d-inline-block mb-3">
+                        <h1 class="text-primary">R.A.S.C</h1>
+                    </a>
+                    <p class="mb-0">Promover la cultura de mejora que permita incrementar el desempeño institucional del SENA.</p>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="mb-4">información</h5>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Valledupar-Cesar-Colombia</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+57 xxxxxxxxxx</p>
+                    <p><i class="fa fa-envelope me-3"></i>RAS.@gmail.com</p>
+                    <!--div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-primary me-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-primary me-1" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-outline-primary me-1" href=""><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div-->
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="mb-4">paginas informativas extras</h5>
+                    <a class="btn btn-link" href="https://www.ins.gov.co/Comunicaciones/Infografias/PROGRAMA%20NACIONAL%20SERPIENTES.pdf">PROGRAMA NACIONAL SERPIENTES</a>
+                    <a class="btn btn-link" href="https://www.mayoclinic.org/es/departments-centers/international?customer_id=465-093-8658&mc_id=google&campaign=20463333343&geo=1029436&kw=clinic%20mayo&ad=679624138502&network=g&sitetarget=&adgroup=158147915731&extension=&target=kwd-305926373726&matchtype=b&device=c&account=4650938658&invsrc=spanish&placementsite=enterprise&gclid=EAIaIQobChMIupOszJ36hQMVc6xaBR2o6QTOEAAYASAAEgKb4_D_BwE">mayo clinic - clinica de cuidados ambientales</a>
+                    <a class="btn btn-link" href="https://www.asgardhospitalveterinari.es/">ASGARD hospital veterinario</a>
+                    <a class="btn btn-link" href="https://www.ucm.es/">Universidad Complutense de Madrid</a>
+
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="mb-4">apoyo</h5>
+                    <a class="btn btn-link" href="https://oferta.senasofiaplus.edu.co/sofia-oferta/">SENA</a>
+                    <a class="btn btn-link" href="https://gestionindustrialsena.blogspot.com/p/siga.html">siga</a>
+                    <a class="btn btn-link" href="https://www.gaiambiente.es/?gad_source=1&gclid=EAIaIQobChMIz6DjsaD6hQMV5alaBR3YUwUnEAAYAiAAEgLfa_D_BwE">gaia-ambiente</a>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="/">R.A.S.C</a>, protección personal y ambiental.
+
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        apoyado por el <a class="border-bottom" href="">SENA</a> creado por Jharold David Doria Mendoza <a href="">editado por Camilo Alejandro Zapata Montero</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="#">R.A.S.C</a>
+                            <!--a href="#">Cookies</a-->
+                            <a href="#">Ayuda</a>
+                            <!--a href="#">Creditos</a-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIN DE CONTACTO -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static\js/lib/wow/wow.min.js"></script>
+    <script src="static\js/lib/easing/easing.min.js"></script>
+    <script src="static\js/lib/waypoints/waypoints.min.js"></script>
+    <script src="static\js/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="static\js/frond-js/main.js"></script>
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <script src="static/js/css/especies/app.js"></script>
+</body>
+
+</html>
