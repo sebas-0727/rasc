@@ -1,11 +1,11 @@
 #pythonaniwere
-#DB_CONFIG = {
-    #'host': 'io0727.mysql.pythonanywhere-services.com',
-    #'user': 'io0727',
-    #'password': '^@k4,FB7RQ2?G_z',
-    #'database': 'io0727$default',
-    #'port': 3306
-#}
+DB_CONFIG = {
+    'host': 'io0727.mysql.pythonanywhere-services.com',
+    'user': 'io0727',
+    'password': '^@k4,FB7RQ2?G_z',
+    'database': 'io0727$default',
+    'port': 3306
+}
 
 #-------------------------------------------------------------------------------------------------------------------
 #clever-clound
@@ -19,9 +19,9 @@
 
 #-------------------------------------------------------------------------------------------------------------------
 #local
-DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': '',
-    'db': 'rasc'
-}
+#DB_CONFIG = {
+    #'host': 'localhost',
+    #'user': 'root',
+    #'password': '',
+    #'db': 'rasc'
+#}
